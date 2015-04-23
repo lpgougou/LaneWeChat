@@ -31,7 +31,8 @@ class Wechat{
     public function __construct($token, $debug = FALSE) {
         //未通过消息真假性验证
        if ($this->isValid() && $this->validateSignature($token)) {
-            return $_GET['echostr'];
+            echo $_GET['echostr'];
+            exit;
         }
         //是否打印错误报告
         $this->debug = $debug;
