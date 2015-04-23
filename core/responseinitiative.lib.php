@@ -34,7 +34,7 @@ class ResponseInitiative{
                 'content'=>$content,
             ),
         );
-        $template = json_encode($template);
+        $template = json_encode($template,JSON_UNESCAPED_UNICODE);// JSON_UNESCAPED_UNICODE 中文支持
 
         return Curl::callWebServer(self::$queryUrl, $template, self::$action);
     }
